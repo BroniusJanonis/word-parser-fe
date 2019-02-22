@@ -1,0 +1,17 @@
+---
+server:
+  port: 8090
+
+spring:
+  application:
+    name: word-parser-fe
+  cloud:
+    config:
+      fail-fast: true
+      uri: http://157.230.27.96:8001
+      profile: word-parser-fe
+      retry:
+        initialInterval: 2000
+        multiplier: 2
+        maxAttempts: 20
+        maxInterval: 16000

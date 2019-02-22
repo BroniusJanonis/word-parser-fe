@@ -1,0 +1,25 @@
+<button ng-click="deleteAllDocumentsByContentType('text')">Delete all txt files</button>
+<p>Žodžiai nuo A iki G</p>
+<ul>
+    <li ng-repeat='(key, value) in documentDownload.wordStartsWithAG'>
+        <span>Žodis: "{{key}}" pasikartoja: "{{value}}" kartą/-us</span>
+    </li>
+</ul>
+<p>Žodžiai nuo H iki N</p>
+<ul>
+    <li ng-repeat='(key, value) in documentDownload.wordStartsWithHN'>
+        <span>Žodis: "{{key}}" pasikartoja: "{{value}}" kartą/-us</span>
+    </li>
+</ul>
+<p>Žodžiai nuo O iki U</p>
+<ul>
+    <li ng-repeat='(key, value) in documentDownload.wordStartsWithOU'>
+        <span>Žodis: "{{key}}" pasikartoja: "{{value}}" kartą/-us</span>
+    </li>
+</ul>
+<p>Žodžiai nuo V iki Z</p>
+<ul>
+    <li ng-repeat='(key, value) in documentDownload.wordStartsWithVZ'>
+        <span>Žodis: "{{key}}" pasikartoja: "{{value}}" kartą/-us</span>
+    </li>
+</ul>
