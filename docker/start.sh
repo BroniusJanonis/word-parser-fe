@@ -1,1 +1,1 @@
-java -Xmx512m  -jar /opt/word-parser-fe.war
+java -Xmx512m  -jar /opt/word-parser-fe.jar

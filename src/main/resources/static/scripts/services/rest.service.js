@@ -5,11 +5,17 @@ angular.module('myApp.services', []).factory('RestService',
 			var service = {};
 
 			service.documentDownload = function () {
-                return $http.get('http://157.230.27.96:7001/parser-api/document-download');
+                return $http({
+                    method: 'GET',
+                    url: '/api/parser-api/document-download'
+                });
             }
 
             service.deleteAllDocumentsByContentType = function (contentType) {
-                return $http.delete('http://157.230.27.96:7001/parser-api/file-upload/' + contentType);
+                return $http({
+                    method: 'DELETE',
+                    url: '/api/parser-api/file-upload/' + contentType
+                });
             }
 
             service.documentUpload = function (files) {
@@ -17,11 +23,13 @@ angular.module('myApp.services', []).factory('RestService',
                 angular.forEach(files, function (file) {
                     fd.append("files", file);
                 });
-				return $http.post("http://157.230.27.96:7001/parser-api/file-upload", fd, {
-                    withCredentials: true,
-                    headers: {'Content-Type': undefined },
-                    transformRequest: angular.identity
-                });
+                return $http({
+                    method: 'POST',
+                    url: '/api/parser-api/file-upload',
+                    data: fd,
+                    transformRequest: angular.identity,
+                    headers: {'Content-Type': undefined}
+                })
             }
 
 			return service;
